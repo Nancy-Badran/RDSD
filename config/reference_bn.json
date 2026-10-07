@@ -1,0 +1,876 @@
+{
+  "order": [
+    "AgeBand",
+    "Region",
+    "EducationLevel",
+    "StudyField",
+    "EmploymentStatus",
+    "Occupation",
+    "Industry",
+    "IncomeBand",
+    "MaritalStatus",
+    "HouseholdSize",
+    "HousingType",
+    "HomeOwnership",
+    "DebtLevel",
+    "InternetUsage",
+    "SocialMediaUsage",
+    "OnlineShopping",
+    "DigitalLiteracy",
+    "HealthStatus",
+    "CareFrequency",
+    "InsuranceCoverage"
+  ],
+  "parents": {
+    "AgeBand": [],
+    "Region": [],
+    "EducationLevel": [
+      "AgeBand",
+      "Region"
+    ],
+    "StudyField": [
+      "EducationLevel",
+      "Region"
+    ],
+    "EmploymentStatus": [
+      "AgeBand",
+      "EducationLevel"
+    ],
+    "Occupation": [
+      "StudyField",
+      "EmploymentStatus"
+    ],
+    "Industry": [
+      "Occupation",
+      "Region"
+    ],
+    "IncomeBand": [
+      "EducationLevel",
+      "Occupation"
+    ],
+    "MaritalStatus": [
+      "AgeBand",
+      "EmploymentStatus"
+    ],
+    "HouseholdSize": [
+      "MaritalStatus",
+      "AgeBand"
+    ],
+    "HousingType": [
+      "HouseholdSize",
+      "IncomeBand"
+    ],
+    "HomeOwnership": [
+      "IncomeBand",
+      "AgeBand"
+    ],
+    "DebtLevel": [
+      "HousingType",
+      "HomeOwnership"
+    ],
+    "InternetUsage": [
+      "AgeBand",
+      "EducationLevel"
+    ],
+    "SocialMediaUsage": [
+      "InternetUsage",
+      "AgeBand"
+    ],
+    "OnlineShopping": [
+      "InternetUsage",
+      "IncomeBand"
+    ],
+    "DigitalLiteracy": [
+      "EducationLevel",
+      "InternetUsage"
+    ],
+    "HealthStatus": [
+      "AgeBand",
+      "EmploymentStatus"
+    ],
+    "CareFrequency": [
+      "HealthStatus",
+      "IncomeBand"
+    ],
+    "InsuranceCoverage": [
+      "EmploymentStatus",
+      "CareFrequency"
+    ]
+  },
+  "cpts": {
+    "AgeBand": [
+      {
+        "given": {},
+        "probabilities": [
+          0.5498339973124778,
+          0.45016600268752216
+        ]
+      }
+    ],
+    "Region": [
+      {
+        "given": {},
+        "probabilities": [
+          0.42555748318834097,
+          0.574442516811659
+        ]
+      }
+    ],
+    "EducationLevel": [
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "StudyField": [
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "EmploymentStatus": [
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EducationLevel": "Basic"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EducationLevel": "Advanced"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EducationLevel": "Basic"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EducationLevel": "Advanced"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "Occupation": [
+      {
+        "given": {
+          "StudyField": "General",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "StudyField": "General",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "StudyField": "Technical",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "StudyField": "Technical",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "Industry": [
+      {
+        "given": {
+          "Occupation": "Other",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "Occupation": "Other",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "Occupation": "Specialized",
+          "Region": "Rural"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "Occupation": "Specialized",
+          "Region": "Urban"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "IncomeBand": [
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "Occupation": "Other"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "Occupation": "Specialized"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "Occupation": "Other"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "Occupation": "Specialized"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "MaritalStatus": [
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "HouseholdSize": [
+      {
+        "given": {
+          "MaritalStatus": "Single",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "MaritalStatus": "Single",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "MaritalStatus": "Partnered",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "MaritalStatus": "Partnered",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "HousingType": [
+      {
+        "given": {
+          "HouseholdSize": "Small",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "HouseholdSize": "Small",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "HouseholdSize": "Large",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "HouseholdSize": "Large",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "HomeOwnership": [
+      {
+        "given": {
+          "IncomeBand": "Lower",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "IncomeBand": "Lower",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "IncomeBand": "Higher",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "IncomeBand": "Higher",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "DebtLevel": [
+      {
+        "given": {
+          "HousingType": "Apartment",
+          "HomeOwnership": "No"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "HousingType": "Apartment",
+          "HomeOwnership": "Yes"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "HousingType": "House",
+          "HomeOwnership": "No"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "HousingType": "House",
+          "HomeOwnership": "Yes"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "InternetUsage": [
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EducationLevel": "Basic"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EducationLevel": "Advanced"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EducationLevel": "Basic"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EducationLevel": "Advanced"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "SocialMediaUsage": [
+      {
+        "given": {
+          "InternetUsage": "Lower",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Lower",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Higher",
+          "AgeBand": "Younger"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Higher",
+          "AgeBand": "Older"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "OnlineShopping": [
+      {
+        "given": {
+          "InternetUsage": "Lower",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Lower",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Higher",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "InternetUsage": "Higher",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "DigitalLiteracy": [
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "InternetUsage": "Lower"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Basic",
+          "InternetUsage": "Higher"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "InternetUsage": "Lower"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "EducationLevel": "Advanced",
+          "InternetUsage": "Higher"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ],
+    "HealthStatus": [
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Younger",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EmploymentStatus": "NotEmployed"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "AgeBand": "Older",
+          "EmploymentStatus": "Employed"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "CareFrequency": [
+      {
+        "given": {
+          "HealthStatus": "FewerConditions",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "HealthStatus": "FewerConditions",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "HealthStatus": "MoreConditions",
+          "IncomeBand": "Lower"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "HealthStatus": "MoreConditions",
+          "IncomeBand": "Higher"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      }
+    ],
+    "InsuranceCoverage": [
+      {
+        "given": {
+          "EmploymentStatus": "NotEmployed",
+          "CareFrequency": "Lower"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      },
+      {
+        "given": {
+          "EmploymentStatus": "NotEmployed",
+          "CareFrequency": "Higher"
+        },
+        "probabilities": [
+          0.9828759666842722,
+          0.017124033315727736
+        ]
+      },
+      {
+        "given": {
+          "EmploymentStatus": "Employed",
+          "CareFrequency": "Lower"
+        },
+        "probabilities": [
+          0.027922573784072924,
+          0.9720774262159271
+        ]
+      },
+      {
+        "given": {
+          "EmploymentStatus": "Employed",
+          "CareFrequency": "Higher"
+        },
+        "probabilities": [
+          0.5621765008857981,
+          0.43782349911420193
+        ]
+      }
+    ]
+  }
+}
