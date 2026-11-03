@@ -37,11 +37,11 @@ def local_score(x,node,parents):
     ll=float((c[mask]*np.log(ratios[mask])).sum())
     return ll-.5*q*np.log(len(x)),c
 
-def learn(x):
+def learn(x, max_parents=2):
     parents={};cpts={}
     for j,name in enumerate(NAMES):
         best=(-math.inf,None,None)
-        for k in range(min(j,2)+1):
+        for k in range(min(j,max_parents)+1):
             for ps in itertools.combinations(range(j),k):
                 score,c=local_score(x,j,ps)
                 if score>best[0]:best=(score,ps,c)
@@ -59,8 +59,8 @@ def nll(x,model):
         loss-=np.log(probs[keys,x[:,j]]).sum()
     return float(loss/len(x))
 
-def generate():
-    rng=np.random.default_rng(42);x=np.zeros((10000,20),dtype=int);reference={'order':NAMES,'parents':{},'cpts':{}}
+def generate(sample_count=10000, seed=42):
+    rng=np.random.default_rng(seed);x=np.zeros((sample_count,20),dtype=int);reference={'order':NAMES,'parents':{},'cpts':{}}
     for j,(name,states,parents,group) in enumerate(SPEC):
         indices=[NAMES.index(p) for p in parents];reference['parents'][name]=parents
         # Explicit synthetic effects; a few negative signs avoid uniform positive associations.
