@@ -1,0 +1,23 @@
+{
+  "seeds": [42, 43, 44],
+  "train_sizes": [1000, 4000, 8000],
+  "test_size": 2000,
+  "max_parents": 2,
+  "sensitive": ["IncomeBand", "DebtLevel", "HealthStatus"],
+  "policy": {"any_of": [
+    {"AgeBand": "Younger", "Region": "Urban"},
+    {"EducationLevel": "Basic", "EmploymentStatus": "NotEmployed"},
+    {"Occupation": "Specialized", "Industry": "Knowledge"}
+  ]},
+  "holder_values": {"AgeBand": "Younger", "Region": "Urban", "EducationLevel": "Basic", "EmploymentStatus": "NotEmployed", "Occupation": "Specialized", "Industry": "Knowledge"},
+  "credentials": [["AgeBand", "Region"], ["EducationLevel", "EmploymentStatus"], ["Occupation", "Industry"]],
+  "impact_scenarios": {
+    "equal": {"IncomeBand": 1, "DebtLevel": 1, "HealthStatus": 1},
+    "income_priority": {"IncomeBand": 8, "DebtLevel": 1, "HealthStatus": 1},
+    "health_priority": {"IncomeBand": 1, "DebtLevel": 1, "HealthStatus": 8}
+  },
+  "impact_provenance": "Hypothetical sensitivity-analysis magnitudes; no ITAP incident data used.",
+  "histories": {"none": [], "age_known": ["AgeBand"], "age_region_known": ["AgeBand", "Region"]},
+  "thresholds": [0, 0.025, 0.05, 0.075, 0.1, 0.15, 1],
+  "attribute_costs": {"AgeBand": 1, "Region": 1, "EducationLevel": 1, "EmploymentStatus": 1, "Occupation": 1, "Industry": 1}
+}

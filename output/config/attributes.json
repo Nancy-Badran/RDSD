@@ -1,0 +1,164 @@
+{
+  "attributes": {
+    "AgeBand": {
+      "states": [
+        "Younger",
+        "Older"
+      ],
+      "domain": "Demography",
+      "sensitive_target": false
+    },
+    "Region": {
+      "states": [
+        "Rural",
+        "Urban"
+      ],
+      "domain": "Demography",
+      "sensitive_target": false
+    },
+    "EducationLevel": {
+      "states": [
+        "Basic",
+        "Advanced"
+      ],
+      "domain": "Education",
+      "sensitive_target": false
+    },
+    "StudyField": {
+      "states": [
+        "General",
+        "Technical"
+      ],
+      "domain": "Education",
+      "sensitive_target": false
+    },
+    "EmploymentStatus": {
+      "states": [
+        "NotEmployed",
+        "Employed"
+      ],
+      "domain": "Employment",
+      "sensitive_target": false
+    },
+    "Occupation": {
+      "states": [
+        "Other",
+        "Specialized"
+      ],
+      "domain": "Employment",
+      "sensitive_target": false
+    },
+    "Industry": {
+      "states": [
+        "Other",
+        "Knowledge"
+      ],
+      "domain": "Employment",
+      "sensitive_target": false
+    },
+    "IncomeBand": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Finance",
+      "sensitive_target": true
+    },
+    "MaritalStatus": {
+      "states": [
+        "Single",
+        "Partnered"
+      ],
+      "domain": "Demography",
+      "sensitive_target": false
+    },
+    "HouseholdSize": {
+      "states": [
+        "Small",
+        "Large"
+      ],
+      "domain": "Demography",
+      "sensitive_target": false
+    },
+    "HousingType": {
+      "states": [
+        "Apartment",
+        "House"
+      ],
+      "domain": "Finance",
+      "sensitive_target": false
+    },
+    "HomeOwnership": {
+      "states": [
+        "No",
+        "Yes"
+      ],
+      "domain": "Finance",
+      "sensitive_target": false
+    },
+    "DebtLevel": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Finance",
+      "sensitive_target": true
+    },
+    "InternetUsage": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Digital",
+      "sensitive_target": false
+    },
+    "SocialMediaUsage": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Digital",
+      "sensitive_target": false
+    },
+    "OnlineShopping": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Digital",
+      "sensitive_target": false
+    },
+    "DigitalLiteracy": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Digital",
+      "sensitive_target": false
+    },
+    "HealthStatus": {
+      "states": [
+        "FewerConditions",
+        "MoreConditions"
+      ],
+      "domain": "Health",
+      "sensitive_target": true
+    },
+    "CareFrequency": {
+      "states": [
+        "Lower",
+        "Higher"
+      ],
+      "domain": "Health",
+      "sensitive_target": false
+    },
+    "InsuranceCoverage": {
+      "states": [
+        "Basic",
+        "Extended"
+      ],
+      "domain": "Health",
+      "sensitive_target": false
+    }
+  }
+}
